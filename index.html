@@ -192,19 +192,10 @@
     document.addEventListener('MSFullscreenChange', fullscreenChangeHandler);
 
     // Intentar pantalla completa al cargar solo la primera vez
-    function isMobileOrTablet() {
-      return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-    }
     window.addEventListener('DOMContentLoaded', () => {
       updateBtn();
-      // Mostrar overlay solo en móviles/tablets
-      if (isMobileOrTablet()) {
-        overlay.style.opacity = '1';
-        overlay.style.display = 'flex';
-      } else {
-        overlay.style.display = 'none';
-        overlayActive = false;
-      }
+      overlay.style.opacity = '1';
+      overlay.style.display = 'flex';
     });
   </script>
   <script src="flutter_bootstrap.js" async></script>
