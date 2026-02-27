@@ -14,7 +14,7 @@
     This is a placeholder for base href that will be replaced by the value of
     the `--base-href` argument provided to `flutter build`.
   -->
-  <base href="/AppDeleVersionWeb/">
+  <base href="/">
 
   <meta charset="UTF-8">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
@@ -23,16 +23,25 @@
   <!-- iOS meta tags & icons -->
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="app_dele_actualizada">
+  <meta name="apple-mobile-web-app-title" content="LaDele V3">
   <link rel="apple-touch-icon" href="icons/Icon-192.png">
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="favicon.png"/>
 
-  <title>app_dele_actualizada</title>
+  <title>LaDele V3</title>
   <link rel="manifest" href="manifest.json">
 </head>
 <body>
+  <!-- Botón de instalar PWA para copiar en tus exportaciones -->
+  <button id="installPwaBtn"
+    style="position:fixed;top:16px;right:16px;z-index:1000;background:#ff9800;color:white;border:none;border-radius:50%;width:40px;height:40px;display:none;align-items:center;justify-content:center;box-shadow:0 2px 6px rgba(0,0,0,0.15);cursor:pointer;">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M12 16V4M12 16l-4-4M12 16l4-4" stroke="white" stroke-width="2" stroke-linecap="round"
+        stroke-linejoin="round" />
+      <rect x="4" y="18" width="16" height="2" rx="1" fill="white" />
+    </svg>
+  </button>
   <!--
     You can customize the "flutter_bootstrap.js" script.
     This is useful to provide a custom configuration to the Flutter loader
@@ -41,13 +50,8 @@
     For more details:
     * https://docs.flutter.dev/platform-integration/web/initialization
   -->
-  <!-- Botón de instalar PWA -->
-  <button id="installPwaBtn" style="position:fixed;top:16px;right:16px;z-index:1000;background:#ff9800;color:white;border:none;border-radius:50%;width:40px;height:40px;display:none;align-items:center;justify-content:center;box-shadow:0 2px 6px rgba(0,0,0,0.15);cursor:pointer;">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M12 16V4M12 16l-4-4M12 16l4-4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-      <rect x="4" y="18" width="16" height="2" rx="1" fill="white"/>
-    </svg>
-  </button>
+  <script src="flutter_bootstrap.js" async></script>
+
   <script>
     let deferredPrompt;
     const installBtn = document.getElementById('installPwaBtn');
@@ -66,11 +70,9 @@
         deferredPrompt = null;
       }
     });
-    // Ocultar el botón si ya está instalada
     window.addEventListener('appinstalled', () => {
       installBtn.style.display = 'none';
     });
   </script>
-  <script src="flutter_bootstrap.js" async></script>
 </body>
 </html>

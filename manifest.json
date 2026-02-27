@@ -1,6 +1,6 @@
 {
-    "name": "app_dele_actualizada",
-    "short_name": "app_dele_actualizada",
+    "name": "LaDele V3",
+    "short_name": "LaDele V3",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
